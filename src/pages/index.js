@@ -3,11 +3,9 @@ import Card from '../components/card'
 
 const IndexPage = () => (
   <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <ul>
-      <Card />
-    </ul>
+    <h1>Cards</h1>
+    <h2>Tables</h2>
+    <Card />
   </div>
 )
 
