@@ -17,9 +17,13 @@ const StyledTooltip = styled.p`
   white-space: nowrap;
   color: #fff;
   background-color: rgba(57, 57, 57, 0.9);
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
   transform: translateY(-100%);
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 
   &::after {
@@ -34,9 +38,10 @@ const StyledTooltip = styled.p`
   }
 `
 
-
-const Tooltip = (props) => (
-    <StyledTooltip className="tooltip" id={props.id} role="tooltip">{props.text}</StyledTooltip>
+const Tooltip = props => (
+  <StyledTooltip className="tooltip" id={props.id} role="tooltip">
+    {props.text}
+  </StyledTooltip>
 )
 
 export default Tooltip
