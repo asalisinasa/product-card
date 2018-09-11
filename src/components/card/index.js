@@ -101,6 +101,10 @@ const ContainerInterest = styled(Container)`
       height: 16px;
     }
 
+    .tooltip {
+      right: -18px;
+    }
+
     .icon-likefill {
       width: 28px;
       height: 26px;
@@ -243,7 +247,7 @@ const Tag = styled.p`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  min-height: 20px;
+  height: 20px;
   margin: 0;
   padding: 0 4px;
   border-radius: 2px;
