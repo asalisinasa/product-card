@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 const IconVerified = props => (
   <svg
@@ -9,14 +8,15 @@ const IconVerified = props => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 18 20"
     aria-labelledby="title"
+    role="presentation"
   >
     <title id="title">Verified Icon</title>
     <g
       id="Symbols"
       stroke="none"
-      stroke-width="1"
+      strokeWidth="1"
       fill="none"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     >
       <g
         id="component_elements/card/240/beiges_2"

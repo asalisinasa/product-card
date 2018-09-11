@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 const IconPhoto = props => (
   <svg
@@ -9,15 +8,16 @@ const IconPhoto = props => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 12 11"
     aria-labelledby="title"
+    role="presentation"
   >
     <title id="title">Photo Icon</title>
 
     <g
       id="Symbols"
       stroke="none"
-      stroke-width="1"
+      strokeWidth="1"
       fill="none"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     >
       <g
         id="component_elements/card/240/Counter"

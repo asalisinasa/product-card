@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 const IconLikeFill = props => (
   <svg
@@ -10,14 +9,15 @@ const IconLikeFill = props => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 18"
     aria-labelledby="title"
+    role="presentation"
   >
     <title id="title">LikeFill Icon</title>
     <g
       id="Symbols"
       stroke="none"
-      stroke-width="1"
+      strokeWidth="1"
       fill="none"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     >
       <g
         id="icons/24/white/like_fill"
@@ -30,7 +30,7 @@ const IconLikeFill = props => (
             id="Combined-Shape"
             stroke="#fff"
             fill="currentColor"
-            fill-rule="nonzero"
+            fillRule="nonzero"
           />
         </g>
       </g>

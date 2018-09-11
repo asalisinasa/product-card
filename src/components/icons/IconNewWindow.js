@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 const IconNewWindow = props => (
   <svg
@@ -9,14 +8,15 @@ const IconNewWindow = props => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 18 18"
     aria-labelledby="title"
+    role="presentation"
   >
     <title id="title">New Window Icon</title>
     <g
       id="Symbols"
       stroke="none"
-      stroke-width="1"
+      strokeWidth="1"
       fill="none"
-      fill-rule="evenodd"
+      fillRule="evenodd"
     >
       <g
         id="icons/24/black/new_window"
@@ -37,19 +37,19 @@ const IconNewWindow = props => (
             d="M13.5,3.5 L20.5,3.5"
             id="Line"
             stroke="#393939"
-            stroke-linecap="square"
+            strokeLinecap="square"
           />
           <path
             d="M20.5,3.5 L20.5,10.5"
             id="Line-2"
             stroke="#393939"
-            stroke-linecap="square"
+            strokeLinecap="square"
           />
           <path
             d="M14,9.87605765 L19.8760576,4"
             id="Line-3"
             stroke="#393939"
-            stroke-linecap="square"
+            strokeLinecap="square"
           />
         </g>
       </g>
