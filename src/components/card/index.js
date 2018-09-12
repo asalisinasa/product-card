@@ -247,6 +247,7 @@ const Tag = styled.p`
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  max-width: calc(100% - 32px);
   height: 20px;
   margin: 0;
   padding: 0 4px;
@@ -262,6 +263,7 @@ const Tag = styled.p`
   color: #fff;
   background-color: ${props =>
     props.locked ? '#F75059' : 'rgba(0, 0, 0, .2)'};
+  overflow: hidden;
 
   &.card__tag-photo,
   &.card__tag-status {
@@ -271,6 +273,13 @@ const Tag = styled.p`
 
   &.card__tag-photo {
     font-size: 12px;
+  }
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
   }
 
   ${ContainerStatus} &.card__tag-status {
@@ -287,6 +296,7 @@ const Tag = styled.p`
     left: ${props => (props.left ? '16px' : 'initial')};
     right: ${props => (props.right ? '16px' : 'initial')};
     bottom: ${props => (props.bottom ? '16px' : 'initial')};
+    max-width: calc(100% - 44px);
     padding: 0 5px;
 
     ${CardLink}:hover &.card__tag-photo {
@@ -581,7 +591,7 @@ const Card = props => (
             <span>{props.photocount}</span>
           </Tag>
           <Tag className="card__tag card__tag-location" bottom left>
-            {props.location}
+            <span>{props.location}</span>
           </Tag>
           <Tag className="card__tag card__tag-status" top right locked>
             Заблокировано
@@ -649,29 +659,26 @@ export default () => (
           productname="Название товара"
           photo="static/photo@4x.png"
           productprice="10&nbsp;000"
-          description="I m Jane Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           photocount="4"
           location="Москва"
         />
       </Container>
       <ContainerStatus className="card card-status">
         <CardInterest
-          productname="Название товара"
+          productname="Длинное название товара"
           photo="static/photo@4x.png"
           productprice="5&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           photocount="1"
           location="500&nbsp;м"
         />
       </ContainerStatus>
       <Container className="card card--locked">
         <Card
-          productname="Название товара"
+          productname="Очень длинное название товара"
           photo="static/photo@4x.png"
           productprice="5&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-          photocount="1"
-          location="500&nbsp;м"
+          photocount="25"
+          location="Нижний Новгород"
         />
       </Container>
       <Container className="card card--locked">
@@ -679,7 +686,6 @@ export default () => (
           productname="Название товара"
           photo="static/photo@4x.png"
           productprice="5&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           photocount="1"
           location="500&nbsp;м"
         />
@@ -689,7 +695,6 @@ export default () => (
           productname="Название товара"
           photo="static/photo@4x.png"
           productprice="5&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           photocount="1"
           location="500&nbsp;м"
         />
@@ -699,8 +704,7 @@ export default () => (
           productname="Название товара"
           photo="static/photo@4x.png"
           productprice="5&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-          photocount="1"
+          photocount="3"
           location="500&nbsp;м"
         />
       </Container>
@@ -712,7 +716,6 @@ export default () => (
           productname="Название товара"
           photo="static/photo@4x.png"
           productprice="5&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           photocount="1"
           location="500&nbsp;м"
         />
@@ -722,27 +725,24 @@ export default () => (
           productname="Название товара"
           photo="static/photo@4x.png"
           productprice="10&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-          photocount="1"
-          location="500&nbsp;м"
+          photocount="10"
+          location="Москва"
+        />
+      </ContainerInterest>
+      <ContainerInterest className="card card-interest">
+        <CardInterest
+          productname="Длинное название товара"
+          photo="static/photo@4x.png"
+          productprice="10&nbsp;000"
+          photocount="420"
+          location="Нижний Новгород"
         />
       </ContainerInterest>
       <ContainerInterest className="card card-interest">
         <CardInterest
           productname="Название товара"
           photo="static/photo@4x.png"
-          productprice="10&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-          photocount="1"
-          location="500&nbsp;м"
-        />
-      </ContainerInterest>
-      <ContainerInterest className="card card-interest">
-        <CardInterest
-          productname="Название товара"
-          photo="static/photo@4x.png"
-          productprice="10&nbsp;000"
-          description="I m Bob smith a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          productprice="100&nbsp;000"
           photocount="1"
           location="500&nbsp;м"
         />
