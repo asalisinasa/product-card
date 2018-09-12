@@ -30,7 +30,7 @@ const ListInterest = styled(List)`
   padding-bottom: 100px;
 `
 
-const Title = styled.div`
+const Title = styled.h3`
   flex-basis: 100%;
   margin-bottom: 24px;
   font-size: 18px;
@@ -61,6 +61,11 @@ const ContainerInterest = styled(Container)`
 
   @media (min-width: 710px) {
     width: 25%;
+
+    .card__photo-count {
+      top: 10px;
+      left: 10px;
+    }
 
     .tooltip {
       right: -18px;
@@ -273,8 +278,11 @@ const PhotoCount = styled(PhotoBadge)`
   }
 
   @media (min-width: 710px) {
-    top: 16px;
-    left: 16px;
+
+    & {
+      top: 16px;
+      left: 16px;
+    }
 
     ${CardLink}:hover & {
       display: -webkit-box;
@@ -286,12 +294,6 @@ const PhotoCount = styled(PhotoBadge)`
     ${ContainerStatus} ${CardLink}:hover & {
       display: none;
       visibility: hidden;
-    }
-
-    ${CardInterest} & {
-      top: 10px;
-      left: 10px;
-      font-size: 12px;
     }
 
     .icon-photo {
@@ -536,7 +538,7 @@ const Like = styled.div`
   }
 `
 
-const Footer = styled.footer`
+const Footer = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
@@ -602,8 +604,8 @@ const Button = styled.a`
 `
 
 const Card = props => (
-  <CardWrapper className="card__wrapper" aria-labelledby="card-description">
-    <CardLink className="card__link" href="#">
+  <CardLink className="card__link" href="#">
+    <CardWrapper className="card__wrapper">
       <PhotoContainer className="card__photo-container">
         <PhotoWrapper className="card__photo-wrapper">
           <Photo
@@ -624,53 +626,44 @@ const Card = props => (
             <span>Заблокировано</span>
           </Status>
           <Like className="card__like">
-            <IconWrapper
-              className="card__icon-wrapper"
-              aria-describedby="tooltip-like"
-            >
+            <IconWrapper className="card__icon-wrapper">
               <IconLikeFill />
-              <Tooltip id="tooltip-like" text="Добавить в избранное" />
+              <Tooltip text="Добавить в избранное" />
             </IconWrapper>
           </Like>
         </PhotoItems>
       </PhotoContainer>
-      <Description className="card__description" id="card-description">
+      <Description className="card__description">
         <ProductPrice className="card__product-price">
           {props.productprice}
           &nbsp;₽
         </ProductPrice>
         <Icons className="card__icons" role="group">
-          <IconWrapper
-            className="card__icon-wrapper"
-            aria-describedby="tooltip-delivery"
-          >
+          <IconWrapper className="card__icon-wrapper">
             <IconDelivery />
-            <Tooltip id="tooltip-delivery" text="Доставка" />
+            <Tooltip text="Доставка" />
           </IconWrapper>
-          <IconWrapper
-            className="card__icon-wrapper"
-            aria-describedby="tooltip-verified"
-          >
+          <IconWrapper className="card__icon-wrapper">
             <IconVerified />
-            <Tooltip id="tooltip-verified" text="Безопасная сделка" />
+            <Tooltip text="Безопасная сделка" />
           </IconWrapper>
           <IconWrapper className="card__icon-wrapper">
             <IconFastsell />
-            <Tooltip id="tooltip-fastsell" text="Премиум размещение" />
+            <Tooltip text="Премиум размещение" />
           </IconWrapper>
         </Icons>
         <ProductName className="card__product-name">
           {props.productname}
         </ProductName>
       </Description>
-    </CardLink>
-    <Footer className="card__footer">
-      <Button className="card__button-more">
-        Подробнее
-        <IconNewWindow />
-      </Button>
-    </Footer>
-  </CardWrapper>
+      <Footer className="card__footer">
+        <Button className="card__button-more">
+          <span>Подробнее</span>
+          <IconNewWindow />
+        </Button>
+      </Footer>
+    </CardWrapper>
+  </CardLink>
 )
 
 const CardInterest = styled(Card)`
@@ -679,8 +672,8 @@ const CardInterest = styled(Card)`
 
 export default () => (
   <div>
+    <Title>Card Default</Title>
     <List>
-      <Title>Card Default</Title>
       <Container className="card">
         <Card
           productname="Название товара"
@@ -736,8 +729,9 @@ export default () => (
         />
       </Container>
     </List>
+
+    <Title>Card Interest</Title>
     <ListInterest classNmae="list-interest">
-      <Title>Card Interest</Title>
       <ContainerInterest className="card card-interest">
         <CardInterest
           productname="Название товара"
