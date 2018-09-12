@@ -55,16 +55,6 @@ const ContainerInterest = styled(Container)`
   min-width: 120px;
   max-width: 280px;
 
-  .card__tag-location {
-    left: 5px;
-    bottom: 5px;
-  }
-
-  .icon-likefill {
-    max-width: 16px;
-    max-height: 16px;
-  }
-
   @media (min-width: 392px) {
     width: 33%;
   }
@@ -72,42 +62,8 @@ const ContainerInterest = styled(Container)`
   @media (min-width: 710px) {
     width: 25%;
 
-    .card__tag-location {
-      left: 10px;
-      bottom: 10px;
-    }
-
-    .card__tag-photo {
-      top: 10px;
-      left: 10px;
-      font-size: 12px;
-    }
-
-    .card__product-price {
-      font-size: 16px;
-    }
-
-    .card__description {
-      padding: 8px 10px 10px;
-    }
-
-    .card__icon-wrapper {
-      width: 22px;
-      height: 22px;
-    }
-
-    .card__description .icon {
-      width: 16px;
-      height: 16px;
-    }
-
     .tooltip {
       right: -18px;
-    }
-
-    .icon-likefill {
-      width: 28px;
-      height: 26px;
     }
   }
 `
@@ -172,10 +128,9 @@ const PhotoWrapper = styled.div`
 const PhotoContainer = styled.div`
   position: relative;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.1);
+  background-color: #ebebeb;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ebebeb;
 
   &::before {
     content: '';
@@ -234,12 +189,16 @@ const Photo = styled.img`
   transform: translate(-50%, -50%);
 `
 
-const Tag = styled.p`
+const PhotoItems = styled.div`
   position: absolute;
-  top: ${props => (props.top ? '8px' : 'initial')};
-  left: ${props => (props.left ? '8px' : 'initial')};
-  right: ${props => (props.right ? '8px' : 'initial')};
-  bottom: ${props => (props.bottom ? '8px' : 'initial')};
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+`
+
+const PhotoBadge = styled.p`
+  position: absolute;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,28 +211,14 @@ const Tag = styled.p`
   margin: 0;
   padding: 0 4px;
   border-radius: 2px;
-  font-family: ${props =>
-    props.locked ? 'Fira Sans, sans-serif' : 'Open Sans, sans-serif'};
-  font-size: ${props => (props.locked ? '12px' : '14px')};
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   font-weight: 400;
-  line-height: ${props => (props.locked ? '20px' : '1.3')};
-  letter-spacing: ${props => (props.locked ? '1.2px' : '0')};
-  text-transform: ${props => (props.locked ? 'uppercase' : 'none')};
+  line-height: 1.3;
   white-space: nowrap;
   color: #fff;
-  background-color: ${props =>
-    props.locked ? '#F75059' : 'rgba(0, 0, 0, .2)'};
+  background-color: rgba(0, 0, 0, .2);
   overflow: hidden;
-
-  &.card__tag-photo,
-  &.card__tag-status {
-    display: none;
-    visibility: hidden;
-  }
-
-  &.card__tag-photo {
-    font-size: 12px;
-  }
 
   span {
     white-space: nowrap;
@@ -282,33 +227,71 @@ const Tag = styled.p`
     text-overflow: ellipsis;
   }
 
-  ${ContainerStatus} &.card__tag-status {
+  @media (min-width: 710px) {
+    max-width: calc(100% - 44px);
+    padding: 0 5px;
+  }
+`
+
+const Status = styled(PhotoBadge)`
+  top: 8px;
+  right: 8px;
+  max-width: 100%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  background-color: #F75059;
+
+  // utility
+  display: none;
+  visibility: visible;
+
+  // utility
+  ${ContainerStatus} & {
     display: block;
     visibility: visible;
   }
+
+  @media (min-width: 710px) {
+    top: 16px;
+    right: 16px;
+    max-width: 100%;
+  }
+`
+
+const PhotoCount = styled(PhotoBadge)`
+  top: 8px;
+  left: 8px;
+  display: none;
+  visibility: hidden;
+  font-size: 12px;
 
   .icon-photo {
     margin-right: 4px;
   }
 
   @media (min-width: 710px) {
-    top: ${props => (props.top ? '16px' : 'initial')};
-    left: ${props => (props.left ? '16px' : 'initial')};
-    right: ${props => (props.right ? '16px' : 'initial')};
-    bottom: ${props => (props.bottom ? '16px' : 'initial')};
-    max-width: calc(100% - 44px);
-    padding: 0 5px;
+    top: 16px;
+    left: 16px;
 
-    ${CardLink}:hover &.card__tag-photo {
+    ${CardLink}:hover & {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       visibility: visible;
     }
 
-    ${ContainerStatus} ${CardLink}:hover &.card__tag-photo {
+    ${ContainerStatus} ${CardLink}:hover & {
       display: none;
       visibility: hidden;
+    }
+
+    ${CardInterest} & {
+      top: 10px;
+      left: 10px;
+      font-size: 12px;
     }
 
     .icon-photo {
@@ -319,12 +302,28 @@ const Tag = styled.p`
   }
 `
 
-const PhotoItems = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+const Location = styled(PhotoBadge)`
+  left: 8px;
+  bottom: 8px;
+  max-width: calc(100% - 42px);
+
+  ${ContainerInterest} & {
+    left: 5px;
+    bottom: 5px;
+    max-width: calc(100% - 32px);
+  }
+
+  @media (min-width: 710px) {
+    left: 16px;
+    bottom: 16px;
+    max-width: calc(100% - 60px);
+
+    ${ContainerInterest} & {
+      left: 10px;
+      bottom: 10px;
+      max-width: calc(100% - 44px);
+    }
+  }
 `
 
 const Description = styled.figcaption`
@@ -340,6 +339,15 @@ const Description = styled.figcaption`
 
   @media (min-width: 710px) {
     padding-left: 16px;
+
+    ${ContainerInterest} & {
+      padding: 8px 10px 10px;
+    }
+
+    ${ContainerInterest} & .icon {
+      width: 16px;
+      height: 16px;
+    }
   }
 `
 
@@ -386,6 +394,10 @@ const ProductPrice = styled.span`
   @media (min-width: 710px) {
     width: calc(100% - 116px);
     font-size: 20px;
+
+    ${ContainerInterest} & {
+      font-size: 16px;
+    }
   }
 `
 
@@ -461,6 +473,11 @@ const IconWrapper = styled.div`
         visibility: visible;
       }
     }
+
+    ${ContainerInterest} & {
+      width: 22px;
+      height: 22px;
+    }
   }
 `
 
@@ -486,6 +503,11 @@ const Like = styled.div`
     stroke: ${props => (props.active ? '#F75059' : '#fff')};
   }
 
+  ${ContainerInterest} .icon-likefill {
+    max-width: 16px;
+    max-height: 16px;
+  }
+
   @media (min-width: 710px) {
     right: 10px;
     bottom: 10px;
@@ -505,6 +527,11 @@ const Like = styled.div`
     ${ContainerInterest} & {
       width: 26px;
       height: 28px;
+    }
+
+    ${ContainerInterest} .icon-likefill {
+      width: 28px;
+      height: 26px;
     }
   }
 `
@@ -586,16 +613,16 @@ const Card = props => (
           />
         </PhotoWrapper>
         <PhotoItems className="card__photo-items" role="group">
-          <Tag className="card__tag card__tag-photo" top left>
+          <PhotoCount className="card__photo-count">
             <IconPhoto />
             <span>{props.photocount}</span>
-          </Tag>
-          <Tag className="card__tag card__tag-location" bottom left>
+          </PhotoCount>
+          <Location className="card__location">
             <span>{props.location}</span>
-          </Tag>
-          <Tag className="card__tag card__tag-status" top right locked>
-            Заблокировано
-          </Tag>
+          </Location>
+          <Status className="card__status">
+            <span>Заблокировано</span>
+          </Status>
           <Like className="card__like">
             <IconWrapper
               className="card__icon-wrapper"
