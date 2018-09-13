@@ -10,7 +10,7 @@ const StyledTooltip = styled.p`
   margin: 0;
   padding: 4px 8px;
   border-radius: 4px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.4;

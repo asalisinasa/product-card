@@ -30,7 +30,7 @@ const Layout = ({ children, data }) => (
         maxWidth: 900,
         padding: '0',
         paddingTop: 0,
-        fontFamily: 'Open Sans, sans-serif',
+        fontFamily: 'Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
       }}
     >
       {children()}

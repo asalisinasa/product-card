@@ -5,7 +5,7 @@ const IndexPage = () => (
   <div>
     <h1
       style={{
-        fontFamily: 'Open Sans, sans-serif',
+        fontFamily: 'Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
         fontSize: 48,
         fontWeight: 900,
       }}
@@ -14,7 +14,7 @@ const IndexPage = () => (
     </h1>
     <h2
       style={{
-        fontFamily: 'Open Sans, sans-serif',
+        fontFamily: 'Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
         fontSize: 32,
         fontWeight: 700,
       }}

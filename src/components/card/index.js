@@ -216,7 +216,7 @@ const PhotoBadge = styled.p`
   margin: 0;
   padding: 0 4px;
   border-radius: 2px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.3;
@@ -242,7 +242,7 @@ const Status = styled(PhotoBadge)`
   top: 8px;
   right: 8px;
   max-width: 100%;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 1.2px;
@@ -356,7 +356,7 @@ const Description = styled.figcaption`
 const ProductName = styled.h2`
   margin: 0;
   padding-right: 4px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #8f8f8f;
@@ -379,7 +379,7 @@ const ProductPrice = styled.span`
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4;
@@ -581,7 +581,7 @@ const Button = styled.a`
   padding: 0 8px;
   border: none;
   border-radius: 4px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 32px;
   text-align: center;
