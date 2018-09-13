@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Tooltip from '../tooltip'
-import IconVerified from '../icons/IconVerified'
-import IconDelivery from '../icons/IconDelivery'
-import IconFastsell from '../icons/IconFastsell'
-import IconLikeFill from '../icons/IconLikeFill'
-import IconPhoto from '../icons/IconPhoto'
-import IconNewWindow from '../icons/IconNewWindow'
+import { IconVerified as IconVerified } from '../icons'
+import { IconDelivery as IconDelivery } from '../icons'
+import { IconFastsell as IconFastsell } from '../icons'
+import { IconLikeFill as IconLikeFill } from '../icons'
+import { IconPhoto as IconPhoto } from '../icons'
+import { IconNewWindow as IconNewWindow } from '../icons'
 
 const List = styled.ul`
   display: flex;
@@ -616,7 +616,7 @@ const Card = props => (
         </PhotoWrapper>
         <PhotoItems className="card__photo-items" role="group">
           <PhotoCount className="card__photo-count">
-            <IconPhoto />
+            <IconPhoto width="20" height="20" />
             <span>{props.photocount}</span>
           </PhotoCount>
           <Location className="card__location">
@@ -627,7 +627,7 @@ const Card = props => (
           </Status>
           <Like className="card__like">
             <IconWrapper className="card__icon-wrapper">
-              <IconLikeFill />
+              <IconLikeFill width="20" height="20" />
               <Tooltip text="Добавить в избранное" />
             </IconWrapper>
           </Like>
@@ -640,15 +640,15 @@ const Card = props => (
         </ProductPrice>
         <Icons className="card__icons" role="group">
           <IconWrapper className="card__icon-wrapper">
-            <IconDelivery />
+            <IconDelivery width="20" height="20" />
             <Tooltip text="Доставка" />
           </IconWrapper>
           <IconWrapper className="card__icon-wrapper">
-            <IconVerified />
+            <IconVerified width="20" height="20" />
             <Tooltip text="Безопасная сделка" />
           </IconWrapper>
           <IconWrapper className="card__icon-wrapper">
-            <IconFastsell />
+            <IconFastsell width="20" height="20" />
             <Tooltip text="Премиум размещение" />
           </IconWrapper>
         </Icons>
@@ -659,7 +659,7 @@ const Card = props => (
       <Footer className="card__footer">
         <Button className="card__button-more">
           <span>Подробнее</span>
-          <IconNewWindow />
+          <IconNewWindow width="18" height="18" />
         </Button>
       </Footer>
     </CardWrapper>
