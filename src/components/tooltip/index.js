@@ -6,7 +6,7 @@ const StyledTooltip = styled.p`
   top: -8px;
   right: -12px;
   z-index: 10;
-  min-height: 24px;
+  height: 24px;
   margin: 0;
   padding: 4px 8px;
   border-radius: 4px;
